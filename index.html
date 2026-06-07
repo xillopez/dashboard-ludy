@@ -1,59 +1,56 @@
 <!DOCTYPE html>
-<html lang="gl">
-<head>
+<html lang="gl"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Colexio Ludy</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <div>
-    <h1>COLEXIO LUDY · FERROL</h1>
-    <p>Educación Infantil e Primaria</p>
-  </div>
-  <div class="hora">
-    <div id="hora"></div>
-    <div id="data"></div>
-  </div>
+<div class="left">
+<img src="logo.png" class="logo">
+<div>
+<h1>Colexio Ludy · Ferrol</h1>
+<p>Educación Infantil e Primaria</p>
+</div>
+</div>
+<div class="clock">
+<div id="hora"></div>
+<div id="data"></div>
+</div>
 </header>
 
 <div class="grid">
-  <section class="card tempo">
-    <h2>🌤️ Tempo en Ferrol</h2>
-    <div class="temp" id="temp">--°C</div>
-    <div id="estado">Actualizando...</div>
-    <div id="minmax"></div>
-  </section>
+<section class="card">
+<h2>🌤 Tempo en Ferrol</h2>
+<div class="big">18°C</div>
+<p>Parcialmente nubrado</p>
+</section>
 
-  <section class="card avisos">
-    <h2>📢 Avisos</h2>
-    <div id="aviso"></div>
-  </section>
+<section class="card">
+<h2>📢 Avisos</h2>
+<ul>
+<li>Festa fin de curso · 17 de xuño</li>
+<li>Ludyolimpiada · 19 de xuño</li>
+<li>Despedida de 6º · 26 de xuño</li>
+</ul>
+</section>
 
-  <section class="card eventos">
-    <h2>📅 Eventos de xuño</h2>
-    <ul>
-      <li>10-12 · Acampada 5º e 6º</li>
-      <li>17 · Festa fin de curso</li>
-      <li>18 · Excursión a Cedeira</li>
-      <li>19 · Ludyolimpiada</li>
-      <li>23 · Notas finais</li>
-      <li>26 · Despedida de 6º</li>
-    </ul>
-  </section>
+<section class="card">
+<h2>🍽 Menú destacado</h2>
+<p><b>Luns 15:</b> Crema de cabaciña, albóndegas en salsa, arroz integral e froita.</p>
+<p><b>Martes 16:</b> Fabas brancas estofadas, pescada á romana, ensalada e iogur.</p>
+</section>
 
-  <section class="card calendario">
-    <h2>🗓️ Calendario</h2>
-    <img src="calendario.png">
-  </section>
+<section class="card calendario">
+<h2>📅 Calendario de xuño</h2>
+<img src="calendario-xuno.jpg">
+</section>
 
-  <section class="card menu">
-    <h2>🍽️ Menú do día</h2>
-    <div id="menu"></div>
-  </section>
+<section class="card full">
+<h2>🎓 Eventos de xuño</h2>
+10-12 Acampada · 17 Festa fin de curso · 18 Excursión Cedeira · 23 Notas · 26 Despedida 6º
+</section>
 </div>
-
 <script src="script.js"></script>
-</body>
-</html>
+</body></html>

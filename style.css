@@ -1,39 +1,14 @@
 
-*{box-sizing:border-box}
-body{margin:0;background:#0d3b73;font-family:Arial,sans-serif;color:#fff}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px}
-h1{margin:0;font-size:42px}
-header p{margin:5px 0 0;color:#bcd2f0}
-#hora{font-size:72px;font-weight:700;text-align:right}
-#data{text-align:right;font-size:22px}
-
-.grid{
-display:grid;
-grid-template-columns:30% 30% 40%;
-grid-template-rows:220px 1fr 240px;
-gap:16px;
-padding:0 16px 16px;
-height:calc(100vh - 120px);
-}
-
-.card{
-background:#f7f9fc;
-color:#1d2a3a;
-border-radius:20px;
-padding:18px;
-overflow:hidden;
-}
-
-.tempo{grid-column:1}
-.avisos{grid-column:2}
-.eventos{grid-column:3;grid-row:1}
-.calendario{grid-column:1/4;grid-row:2}
-.menu{grid-column:1/4;grid-row:3}
-
-.temp{font-size:80px;font-weight:700;color:#0d3b73}
-#aviso{font-size:28px;font-weight:700;color:#0d3b73;margin-top:20px}
-.calendario img{width:100%;height:100%;object-fit:contain}
-.menu{font-size:26px}
-h2{margin-top:0;color:#0d3b73}
-ul{margin:0;padding-left:20px}
-li{margin:8px 0}
+body{margin:0;background:#123f7a;font-family:Arial,sans-serif}
+header{height:120px;color:white;display:flex;justify-content:space-between;align-items:center;padding:0 30px}
+.left{display:flex;align-items:center;gap:20px}
+.logo{height:90px}
+h1{margin:0}
+.clock{text-align:right}
+#hora{font-size:56px;font-weight:bold}
+#data{font-size:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 380px 150px;gap:16px;padding:16px;height:calc(100vh - 120px);box-sizing:border-box}
+.card{background:#f5f7fa;border-radius:18px;padding:18px;color:#222;overflow:hidden}
+.big{font-size:64px;font-weight:bold}
+.calendario img{width:100%;height:290px;object-fit:contain}
+.full{grid-column:1/3}
