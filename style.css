@@ -1,9 +1,15 @@
-body{margin:0;font-family:Arial,sans-serif;background:#0b3767;color:white}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#1a4d87}
-.marca{display:flex;align-items:center;gap:15px}.marca img{height:90px}
-#hora{font-size:70px;font-weight:bold}#data{font-size:24px}
-main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
-.card{background:white;color:#222;border-radius:20px;padding:20px}
-#temperatura{font-size:72px;font-weight:bold}
-#avisos,#menu-dia{font-size:22px}
-ul{margin:0;padding-left:20px}
+
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#0b2f57;color:white}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:#163f73}
+.brand{display:flex;align-items:center;gap:18px}.brand img{height:90px}
+h1{margin:0} .brand p{margin:0;opacity:.9}
+#hora{font-size:84px;font-weight:700;text-align:right}
+#data{font-size:24px}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
+.card{background:#fff;color:#222;border-radius:22px;padding:22px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+#temperatura{font-size:88px;font-weight:bold}
+#estado{font-size:28px}
+#avisos{font-size:30px;font-weight:600;color:#163f73;min-height:120px}
+#menu-dia{font-size:24px;line-height:1.5}
+.calendar li{margin:8px 0}
+footer{position:fixed;bottom:0;left:0;right:0;background:#163f73;padding:10px;text-align:center}
