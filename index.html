@@ -3,80 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colexio Ludy - Panel Informativo</title>
-
+<title>Colexio Ludy - Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header>
-    <div class="logo">
-        <h1>COLEXIO LUDY · FERROL</h1>
-    </div>
-
-    <div class="reloxo">
-        <div id="hora"></div>
-        <div id="data"></div>
-    </div>
+<h1>COLEXIO LUDY · FERROL</h1>
+<div class="clock">
+<div id="hora"></div>
+<div id="data"></div>
+</div>
 </header>
 
-<main>
+<div class="grid">
+<div class="card">
+<h2>🌤️ Tempo en Ferrol</h2>
+<div id="temperatura">--°C</div>
+<div id="estado">Cargando...</div>
+<div id="maxima"></div>
+<div id="minima"></div>
+</div>
 
-<section class="tempo">
-    <h2>🌤️ Tempo en Ferrol</h2>
+<div class="card">
+<h2>📢 Novidades e avisos</h2>
+<div id="avisos"></div>
+</div>
 
-    <div class="tempo-principal">
-        <span id="temperatura">--°C</span>
-        <span id="estado">Cargando...</span>
-    </div>
+<div class="card">
+<h2>📅 Xuño 2026</h2>
+<ul>
+<li>4 xuño · Teatro</li>
+<li>10-12 xuño · Acampada</li>
+<li>17 xuño · Festa fin de curso</li>
+<li>19 xuño · Ludyolimpiada</li>
+<li>26 xuño · Despedida 6º</li>
+</ul>
+</div>
 
-    <div class="temp-min-max">
-        <span id="maxima">Máx: --°C</span>
-        <span id="minima">Mín: --°C</span>
-    </div>
-</section>
-
-<section class="avisos">
-    <h2>📢 Novidades e avisos</h2>
-
-    <div id="avisos-container"></div>
-</section>
-
-<section class="eventos">
-    <h2>📅 Xuño 2026</h2>
-
-    <ul>
-        <li>4 xuño · Teatro 6º Infantil e 6º Primaria</li>
-        <li>10-12 xuño · Acampada 5º e 6º Primaria</li>
-        <li>15 xuño · Excursión Infantil ao Lago</li>
-        <li>17 xuño · Festa Fin de Curso</li>
-        <li>18 xuño · Excursión Primaria a Cedeira</li>
-        <li>19 xuño · Ludyolimpiada</li>
-        <li>23 xuño · Notas finais</li>
-        <li>26 xuño · Acto despedida 6º Primaria</li>
-    </ul>
-</section>
-
-<section class="menu">
-    <h2>🍽️ Menú do comedor</h2>
-
-    <div class="menu-dia">
-        <p><strong>Primeiro:</strong> Sopa de cocido</p>
-        <p><strong>Segundo:</strong> Filete de polo con ensalada</p>
-        <p><strong>Guarnición:</strong> Patacas ao vapor</p>
-        <p><strong>Sobremesa:</strong> Iogur natural</p>
-        <p><strong>Pan e auga</strong></p>
-    </div>
-</section>
-
-</main>
-
-<footer>
-    Xuntos aprendemos, xuntos medramos ❤️
-</footer>
+<div class="card">
+<h2>🍽️ Menú do comedor</h2>
+<p>Sopa de cocido</p>
+<p>Filete de polo con ensalada</p>
+<p>Iogur natural</p>
+</div>
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
