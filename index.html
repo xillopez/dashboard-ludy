@@ -3,41 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colexio Ludy</title>
+<title>Colexio Ludy TV</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<div class="brand">COLEXIO LUDY · FERROL</div>
-<div class="clock">
-<div id="hora"></div>
-<div id="data"></div>
+<div class="header">
+  <div>
+    <div class="school">COLEXIO LUDY · FERROL</div>
+    <div class="subtitle">Panel informativo</div>
+  </div>
+  <div class="clock">
+    <div id="hora"></div>
+    <div id="data"></div>
+  </div>
 </div>
-</header>
 
-<main>
-<section class="weather card">
-<h2>🌤️ Tempo en Ferrol</h2>
-<div id="temp">--°C</div>
-<div id="estado">Cargando...</div>
-</section>
+<div class="layout">
+  <div class="weather card">
+    <h2>🌤️ Tempo en Ferrol</h2>
+    <div class="temp" id="temp">--°C</div>
+    <div class="state" id="estado">Actualizando...</div>
+    <div id="minmax"></div>
+  </div>
 
-<section class="notice card">
-<h2>📢 Avisos</h2>
-<div id="aviso"></div>
-</section>
+  <div class="alerts card">
+    <h2>📢 Avisos destacados</h2>
+    <div id="aviso"></div>
+  </div>
 
-<section class="calendar card">
-<h2>📅 Calendario de xuño</h2>
-<img src="calendario-xuno.jpg" alt="Calendario">
-</section>
+  <div class="calendar card">
+    <h2>📅 Calendario de xuño</h2>
+    <img src="calendario.jpg">
+  </div>
 
-<section class="menu card">
-<h2>🍽️ Menú do día</h2>
-<div id="menu"></div>
-</section>
-</main>
-
+  <div class="menu card">
+    <h2>🍽️ Menú do día</h2>
+    <div id="menu"></div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

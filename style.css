@@ -1,11 +1,16 @@
 
-body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#163f73;color:white}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px}
-.brand{font-size:36px;font-weight:700}
-#hora{font-size:64px;font-weight:700;text-align:right}
-#data{text-align:right}
-main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
-.card{background:#fff;color:#222;border-radius:20px;padding:20px}
-.calendar img{width:100%;height:auto;border-radius:10px}
-#temp{font-size:72px;font-weight:700}
-#menu{font-size:22px;line-height:1.4}
+body{margin:0;background:#123f73;font-family:Segoe UI,Arial,sans-serif;color:#fff}
+.header{height:110px;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.school{font-size:44px;font-weight:800}
+.subtitle{opacity:.8}
+.clock{text-align:right}
+#hora{font-size:72px;font-weight:800}
+#data{font-size:22px}
+.layout{height:calc(100vh - 110px);display:grid;grid-template-columns:42% 58%;grid-template-rows:34% 66%;gap:18px;padding:0 18px 18px}
+.card{background:#f5f7fb;color:#1d2430;border-radius:22px;padding:18px;overflow:hidden}
+.weather .temp{font-size:86px;font-weight:800;color:#123f73}
+.weather .state{font-size:28px}
+.alerts #aviso{font-size:34px;font-weight:700;color:#123f73;margin-top:25px}
+.calendar img{width:100%;height:calc(100% - 40px);object-fit:contain}
+.menu #menu{font-size:28px;line-height:1.5}
+h2{margin:0 0 12px 0;color:#123f73}
