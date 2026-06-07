@@ -1,0 +1,9 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a2f57;color:white;font-family:Arial,sans-serif;height:100vh;overflow:hidden}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#123f73}
+#hora{font-size:5rem;font-weight:bold}
+#data{font-size:1.4rem}
+main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
+section{background:white;color:#222;border-radius:20px;padding:20px}
+#temperatura{font-size:5rem;font-weight:bold}
+footer{position:absolute;bottom:0;width:100%;text-align:center;background:#123f73;padding:15px}
