@@ -1,16 +1,39 @@
 
-body{margin:0;background:#123f73;font-family:Segoe UI,Arial,sans-serif;color:#fff}
-.header{height:110px;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
-.school{font-size:44px;font-weight:800}
-.subtitle{opacity:.8}
-.clock{text-align:right}
-#hora{font-size:72px;font-weight:800}
-#data{font-size:22px}
-.layout{height:calc(100vh - 110px);display:grid;grid-template-columns:42% 58%;grid-template-rows:34% 66%;gap:18px;padding:0 18px 18px}
-.card{background:#f5f7fb;color:#1d2430;border-radius:22px;padding:18px;overflow:hidden}
-.weather .temp{font-size:86px;font-weight:800;color:#123f73}
-.weather .state{font-size:28px}
-.alerts #aviso{font-size:34px;font-weight:700;color:#123f73;margin-top:25px}
-.calendar img{width:100%;height:calc(100% - 40px);object-fit:contain}
-.menu #menu{font-size:28px;line-height:1.5}
-h2{margin:0 0 12px 0;color:#123f73}
+*{box-sizing:border-box}
+body{margin:0;background:#0d3b73;font-family:Arial,sans-serif;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px}
+h1{margin:0;font-size:42px}
+header p{margin:5px 0 0;color:#bcd2f0}
+#hora{font-size:72px;font-weight:700;text-align:right}
+#data{text-align:right;font-size:22px}
+
+.grid{
+display:grid;
+grid-template-columns:30% 30% 40%;
+grid-template-rows:220px 1fr 240px;
+gap:16px;
+padding:0 16px 16px;
+height:calc(100vh - 120px);
+}
+
+.card{
+background:#f7f9fc;
+color:#1d2a3a;
+border-radius:20px;
+padding:18px;
+overflow:hidden;
+}
+
+.tempo{grid-column:1}
+.avisos{grid-column:2}
+.eventos{grid-column:3;grid-row:1}
+.calendario{grid-column:1/4;grid-row:2}
+.menu{grid-column:1/4;grid-row:3}
+
+.temp{font-size:80px;font-weight:700;color:#0d3b73}
+#aviso{font-size:28px;font-weight:700;color:#0d3b73;margin-top:20px}
+.calendario img{width:100%;height:100%;object-fit:contain}
+.menu{font-size:26px}
+h2{margin-top:0;color:#0d3b73}
+ul{margin:0;padding-left:20px}
+li{margin:8px 0}
