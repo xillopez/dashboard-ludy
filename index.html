@@ -1,56 +1,103 @@
 <!DOCTYPE html>
 <html lang="gl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colexio Ludy</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colexio Ludy · Panel informativo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-  <div class="brand">
-    <img src="logo.png" class="logo">
-    <div>
-      <h1>Colexio Ludy · Ferrol</h1>
-      <p>Educación Infantil e Primaria</p>
-    </div>
-  </div>
-  <div class="clock">
-    <div id="hora"></div>
-    <div id="data"></div>
-  </div>
-</header>
-
-<main class="layout">
-  <section class="card tempo">
-    <h2>🌤 Tempo en Ferrol</h2>
-    <div class="tempo-wrap">
-      <div class="icon">🌤️</div>
-      <div>
-        <div class="temp">18°C</div>
-        <div class="small">Parcialmente nubrado</div>
+  <div class="screen">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="Colexio Ludy" class="logo" />
+        <div>
+          <h1>COLEXIO LUDY</h1>
+          <p>Educación Infantil e Primaria · Ferrol</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section class="card avisos">
-    <h2>📢 Avisos</h2>
-    <ul>
-      <li>Ludyolimpiada · 19 de xuño</li>
-      <li>Festa fin de curso · 17 de xuño</li>
-      <li>Acto despedida 6º · 26 de xuño</li>
-    </ul>
-  </section>
+      <div class="timeblock">
+        <div id="hora">--:--</div>
+        <div id="data">cargando data…</div>
+      </div>
 
-  <section class="card calendario">
-    <h2>📅 Calendario de xuño</h2>
-    <img src="calendario-xuno.jpg" class="calendar-img">
-  </section>
+      <div class="motto">
+        Medramos xuntos,<br />
+        aprendemos para a vida 💜
+      </div>
+    </header>
 
-  <section class="card menu">
-    <h2>🍽 Menú do día</h2>
-    <div id="menuDia"></div>
-  </section>
-</main>
-<script src="script.js"></script>
-</body></html>
+    <main class="dashboard">
+      <section class="card weather-card">
+        <div class="section-title">📍 TEMPO EN FERROL</div>
+        <div class="weather-main">
+          <div class="weather-art">
+            <div class="sun"></div>
+            <div class="cloud cloud-a"></div>
+            <div class="cloud cloud-b"></div>
+          </div>
+          <div>
+            <div id="temperatura" class="temperature">--°C</div>
+            <div id="estado" class="weather-text">Actualizando…</div>
+          </div>
+        </div>
+        <div class="weather-stats">
+          <div>💧 <span id="humidade">--%</span><small>Humidade</small></div>
+          <div>🌬️ <span id="vento">-- km/h</span><small>Vento</small></div>
+          <div>🔺 <span id="maxima">--°C</span><small>Máxima</small></div>
+          <div>🔻 <span id="minima">--°C</span><small>Mínima</small></div>
+        </div>
+      </section>
+
+      <section class="card menu-card">
+        <div class="menu-head">
+          <h2>🍽️ MENÚ DE HOXE</h2>
+          <div id="menu-data" class="date-pill">--</div>
+        </div>
+        <div class="menu-body">
+          <div class="menu-badge">
+            <span>MENÚ</span>
+            <strong id="menu-dia-num">--</strong>
+            <span>XUÑO</span>
+          </div>
+          <ul id="menu-list"></ul>
+          <div class="dish">🥗</div>
+        </div>
+        <div id="nutrition" class="nutrition"></div>
+      </section>
+
+      <section class="card notices-card">
+        <h2>🔔 AVISOS</h2>
+        <div id="avisos-list" class="notice-list"></div>
+      </section>
+
+      <section class="card events-card">
+        <h2>📅 PRÓXIMOS EVENTOS</h2>
+        <div id="events-list" class="events-list"></div>
+      </section>
+
+      <section class="card mini-calendar-card">
+        <h2>🗓️ XUÑO 2026</h2>
+        <div class="mini-calendar" id="mini-calendar"></div>
+        <div class="legend">
+          <span><i class="dot purple"></i> Actividades</span>
+          <span><i class="dot yellow"></i> Celebracións</span>
+          <span><i class="dot blue"></i> Saídas</span>
+          <span><i class="dot green"></i> Entregas</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Coidamos</span>
+      <b>•</b>
+      <span>Educamos</span>
+      <b>•</b>
+      <span>Inspiramos</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
