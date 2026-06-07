@@ -1,13 +1,11 @@
 
-body{margin:0;background:#123f73;font-family:Segoe UI,Arial,sans-serif;color:white}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 40px}
-.titulo{font-size:42px;font-weight:700}
-#hora{font-size:72px;font-weight:700;text-align:right}
-#data{text-align:right;font-size:22px}
-.dashboard{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.panel{background:white;color:#222;border-radius:24px;padding:24px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-#temperatura{font-size:82px;font-weight:700}
-#estado{font-size:28px}
-#aviso{font-size:32px;color:#123f73;font-weight:600;min-height:100px}
-#menu{font-size:24px;line-height:1.5}
-li{margin:10px 0}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#163f73;color:white}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px}
+.brand{font-size:36px;font-weight:700}
+#hora{font-size:64px;font-weight:700;text-align:right}
+#data{text-align:right}
+main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
+.card{background:#fff;color:#222;border-radius:20px;padding:20px}
+.calendar img{width:100%;height:auto;border-radius:10px}
+#temp{font-size:72px;font-weight:700}
+#menu{font-size:22px;line-height:1.4}

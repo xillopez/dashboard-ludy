@@ -3,47 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colexio Ludy - Dashboard Premium</title>
+<title>Colexio Ludy</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="topbar">
-  <div class="titulo">COLEXIO LUDY · FERROL</div>
-  <div class="reloxo">
-    <div id="hora"></div>
-    <div id="data"></div>
-  </div>
+<header>
+<div class="brand">COLEXIO LUDY · FERROL</div>
+<div class="clock">
+<div id="hora"></div>
+<div id="data"></div>
 </div>
+</header>
 
-<div class="dashboard">
-  <div class="panel tempo">
-    <h2>🌤️ Tempo en Ferrol</h2>
-    <div id="temperatura">--°C</div>
-    <div id="estado">Cargando...</div>
-    <div id="minmax"></div>
-  </div>
+<main>
+<section class="weather card">
+<h2>🌤️ Tempo en Ferrol</h2>
+<div id="temp">--°C</div>
+<div id="estado">Cargando...</div>
+</section>
 
-  <div class="panel avisos">
-    <h2>📢 Avisos destacados</h2>
-    <div id="aviso"></div>
-  </div>
+<section class="notice card">
+<h2>📢 Avisos</h2>
+<div id="aviso"></div>
+</section>
 
-  <div class="panel calendario">
-    <h2>📅 Xuño 2026</h2>
-    <ul>
-      <li>10-12 · Acampada 5º e 6º</li>
-      <li>17 · Festa Fin de Curso</li>
-      <li>19 · Ludyolimpiada</li>
-      <li>23 · Notas finais</li>
-      <li>26 · Despedida 6º Primaria</li>
-    </ul>
-  </div>
+<section class="calendar card">
+<h2>📅 Calendario de xuño</h2>
+<img src="calendario-xuno.jpg" alt="Calendario">
+</section>
 
-  <div class="panel menu">
-    <h2>🍽️ Menú do día</h2>
-    <div id="menu"></div>
-  </div>
-</div>
+<section class="menu card">
+<h2>🍽️ Menú do día</h2>
+<div id="menu"></div>
+</section>
+</main>
+
 <script src="script.js"></script>
 </body>
 </html>
