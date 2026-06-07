@@ -1,14 +1,13 @@
-
-body{margin:0;background:#123f7a;font-family:Arial,sans-serif}
-header{height:120px;color:white;display:flex;justify-content:space-between;align-items:center;padding:0 30px}
-.left{display:flex;align-items:center;gap:20px}
-.logo{height:90px}
-h1{margin:0}
-.clock{text-align:right}
-#hora{font-size:56px;font-weight:bold}
-#data{font-size:20px}
-.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 380px 150px;gap:16px;padding:16px;height:calc(100vh - 120px);box-sizing:border-box}
-.card{background:#f5f7fa;border-radius:18px;padding:18px;color:#222;overflow:hidden}
-.big{font-size:64px;font-weight:bold}
-.calendario img{width:100%;height:290px;object-fit:contain}
-.full{grid-column:1/3}
+body{margin:0;background:#123f7a;font-family:Segoe UI,Arial,sans-serif}
+header{height:110px;background:#123f7a;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 30px}
+.brand{display:flex;align-items:center;gap:16px}.logo{height:80px}
+h1,p{margin:0}.clock{text-align:right}#hora{font-size:64px;font-weight:700}
+#data{font-size:22px}
+.layout{display:grid;grid-template-columns:30% 70%;grid-template-rows:180px 1fr;gap:18px;padding:18px;height:calc(100vh - 110px);box-sizing:border-box}
+.card{background:#f7f8fb;border-radius:24px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.calendario{grid-column:2;grid-row:1/3}
+.calendar-img{width:100%;height:calc(100% - 40px);object-fit:contain}
+.tempo-wrap{display:flex;align-items:center;gap:20px}.icon{font-size:72px}.temp{font-size:48px;font-weight:700}
+.small{font-size:20px;color:#666}
+#menuDia{font-size:20px;line-height:1.6}
+ul{padding-left:20px}
