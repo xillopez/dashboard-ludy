@@ -3,48 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colexio Ludy - Panel Profesional</title>
+<title>Colexio Ludy - Dashboard Premium</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<div class="brand"><img src="logo.png"><div><h1>Colexio Ludy · Ferrol</h1><p>Panel informativo</p></div></div>
-<div class="clock"><div id="hora"></div><div id="data"></div></div>
-</header>
-
-<div class="layout">
-<section class="card weather">
-<h2>🌤️ Tempo en Ferrol</h2>
-<div id="temperatura">--°C</div>
-<div id="estado">Cargando...</div>
-<div id="maxima"></div><div id="minima"></div>
-</section>
-
-<section class="card notices">
-<h2>📢 Avisos destacados</h2>
-<div id="avisos"></div>
-</section>
-
-<section class="card calendar">
-<h2>📅 Xuño 2026</h2>
-<ul>
-<li>4 · Teatro 6º Infantil e Primaria</li>
-<li>10-12 · Acampada 5º e 6º</li>
-<li>15 · Excursión Infantil ao Lago</li>
-<li>17 · Festa Fin de Curso</li>
-<li>18 · Excursión a Cedeira</li>
-<li>19 · Ludyolimpiada</li>
-<li>23 · Notas finais</li>
-<li>26 · Despedida de 6º</li>
-</ul>
-</section>
-
-<section class="card menu">
-<h2>🍽️ Menú do día</h2>
-<div id="menu-dia"></div>
-</section>
+<div class="topbar">
+  <div class="titulo">COLEXIO LUDY · FERROL</div>
+  <div class="reloxo">
+    <div id="hora"></div>
+    <div id="data"></div>
+  </div>
 </div>
 
-<footer>Benvidos ao Colexio Ludy · Educación Infantil e Primaria</footer>
+<div class="dashboard">
+  <div class="panel tempo">
+    <h2>🌤️ Tempo en Ferrol</h2>
+    <div id="temperatura">--°C</div>
+    <div id="estado">Cargando...</div>
+    <div id="minmax"></div>
+  </div>
+
+  <div class="panel avisos">
+    <h2>📢 Avisos destacados</h2>
+    <div id="aviso"></div>
+  </div>
+
+  <div class="panel calendario">
+    <h2>📅 Xuño 2026</h2>
+    <ul>
+      <li>10-12 · Acampada 5º e 6º</li>
+      <li>17 · Festa Fin de Curso</li>
+      <li>19 · Ludyolimpiada</li>
+      <li>23 · Notas finais</li>
+      <li>26 · Despedida 6º Primaria</li>
+    </ul>
+  </div>
+
+  <div class="panel menu">
+    <h2>🍽️ Menú do día</h2>
+    <div id="menu"></div>
+  </div>
+</div>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
