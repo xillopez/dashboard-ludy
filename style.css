@@ -1,10 +1,1 @@
-
-body{font-family:Arial,sans-serif;margin:0;background:#0d3768;color:white}
-header{display:flex;justify-content:space-between;padding:20px;background:#1a4a84}
-#hora{font-size:64px;font-weight:bold}
-#data{font-size:24px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
-.card{background:white;color:#222;border-radius:18px;padding:20px}
-#temperatura{font-size:72px;font-weight:bold}
-#estado{font-size:24px}
-ul{padding-left:20px}
+body{font-family:Arial,sans-serif;margin:0;background:#0d3768;color:white}header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#1a4a84}#hora{font-size:64px;font-weight:bold}.brand{display:flex;align-items:center;gap:15px}.brand img{height:70px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}.card{background:white;color:#222;border-radius:18px;padding:20px}#temperatura{font-size:72px;font-weight:bold}
