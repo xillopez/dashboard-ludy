@@ -2,9 +2,9 @@ const dias = ["domingo","luns","martes","mércores","xoves","venres","sábado"];
 const meses = ["xaneiro","febreiro","marzo","abril","maio","xuño","xullo","agosto","setembro","outubro","novembro","decembro"];
 
 const menus = {
-  7:{kcal:766.943,items:["Pasta á napolitana","Tortilla de cabaciña","Tomate natural","Froita e pan"]},
-  8:{kcal:778.703,items:["Minestra con allada e pataca","Lombo natural adubado","Ensalada de leituga e olivas","Iogur natural e pan"]},
-  9:{kcal:1454.907,items:["Arroz integral con tomate","Ragout de pavo","Ensalada primavera","Froita e pan integral"]},
+  9:{kcal:766.943,items:["Pasta á napolitana","Tortilla de cabaciña","Tomate natural","Froita e pan"]},
+  10:{kcal:778.703,items:["Minestra con allada e pataca","Lombo natural adubado","Ensalada de leituga e olivas","Iogur natural e pan"]},
+  11:{kcal:1454.907,items:["Arroz integral con tomate","Ragout de pavo","Ensalada primavera","Froita e pan integral"]},
 
   14:{kcal:907.216,items:["Crema de cabaciña","Tortilla de pataca","Leituga e millo","Froita e pan"]},
   15:{kcal:1047.663,items:["Fabas estufadas","Filete ruso","Patacas asadas","Froita e pan integral"]},
@@ -84,7 +84,7 @@ function setEvents(){
     .filter(e=>(e.end || e.day)>=today)
     .slice(0,6);
 
-  const events = document.getElementById("events-list");
+  const events = document.getElementById("elist");
   events.innerHTML = "";
 
   upcoming.forEach(e=>{
@@ -97,7 +97,7 @@ function setEvents(){
     events.appendChild(div);
   });
 
-  const notices = document.getElementById("avisos-list");
+  const notices = document.getElementById("notices");
   notices.innerHTML = "";
 
   upcoming.slice(0,4).forEach(e=>{
@@ -113,7 +113,7 @@ function setEvents(){
 }
 
 function buildCalendar(){
-  const root = document.getElementById("mini-calendar");
+  const root = document.getElementById("cal");
   root.innerHTML = "";
 
   const weekdays = ["LUN","MAR","MÉR","XOV","VEN","SÁB","DOM"];
