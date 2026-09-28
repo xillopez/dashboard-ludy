@@ -2,179 +2,232 @@ const dias = ["domingo","luns","martes","mércores","xoves","venres","sábado"];
 const meses = ["xaneiro","febreiro","marzo","abril","maio","xuño","xullo","agosto","setembro","outubro","novembro","decembro"];
 
 const menus = {
-  1: { kcal:564, nut:"P: 23% · HC: 46% · L: 25% · Graxas sat.: 3%", items:["Lentellas estofadas","Filete de pescada á mariñeira","Patacas ao vapor","Froita"] },
-  2: { kcal:770, nut:"P: 28% · HC: 27% · L: 43% · Graxas sat.: 9%", items:["Chícharos con xamón","Polo asado ao limón e tomiño","Leituga e millo","Froita"] },
-  3: { kcal:734, nut:"P: 11% · HC: 50% · L: 36% · Graxas sat.: 7%", items:["Arroz caldoso","Tortilla de patacas","Ensalada mixta","Froita"] },
-  4: { kcal:830, nut:"P: 17% · HC: 41% · L: 40% · Graxas sat.: 15%", items:["Macarróns integrais á napolitana","Hamburguesa con queixo","Leituga","Iogur de sabor"] },
-  5: { kcal:526, nut:"P: 14% · HC: 53% · L: 27% · Graxas sat.: 3%", items:["Crema de verduras","Garavanzos con boloñesa vexetal","Froita"] },
-  8: { kcal:716, nut:"P: 20% · HC: 41% · L: 34% · Graxas sat.: 8%", items:["Ensaladilla Olivier con atún, ovo, olivas e maionesa","Fabas brancas guisadas con sepia","Iogur de sabor"] },
-  9: { kcal:719, nut:"P: 16% · HC: 45% · L: 37% · Graxas sat.: 6%", items:["Arroz con tomate e cebola","Salmón ao forno","Ensalada mixta","Froita"] },
-  10:{ kcal:672, nut:"P: 19% · HC: 36% · L: 41% · Graxas sat.: 14%", items:["Sopa de pasta","Carne asada","Minestra de verduras","Froita"] },
-  11:{ kcal:556, nut:"P: 18% · HC: 41% · L: 35% · Graxas sat.: 7%", items:["Lentellas estofadas con arroz integral","Tortilla francesa","Leituga e cenoria relada","Froita"] },
-  12:{ kcal:633, nut:"P: 10% · HC: 41% · L: 46% · Graxas sat.: 6%", items:["Brócoli salteado","Croquetas de polo","Leituga e tomate","Froita"] },
-  15:{ kcal:617, nut:"P: 13% · HC: 39% · L: 45% · Graxas sat.: 12%", items:["Crema de cabaciña","Albóndegas en salsa","Arroz integral","Froita"] },
-  16:{ kcal:771, nut:"P: 21% · HC: 37% · L: 38% · Graxas sat.: 8%", items:["Fabas brancas estofadas","Filete de pescada á romana","Ensalada de leituga, tomate e cenoria relada","Iogur de sabor"] },
-  17:{ kcal:564, nut:"P: 18% · HC: 49% · L: 27% · Graxas sat.: 4%", items:["Xudías verdes salteadas con pemento","Cocido con garavanzos, polo e patacas","Froita"] },
-  18:{ kcal:805, nut:"P: 12% · HC: 45% · L: 40% · Graxas sat.: 8%", items:["Ensalada de pasta","Tortilla de patacas","Ensalada de leituga, cebola e millo","Froita"] },
-  19:{ kcal:null, nut:"", items:["Menú especial de fin de curso"] }
+  7:{kcal:766.943,items:["Pasta á napolitana","Tortilla de cabaciña","Tomate natural","Froita e pan"]},
+  8:{kcal:778.703,items:["Minestra con allada e pataca","Lombo natural adubado","Ensalada de leituga e olivas","Iogur natural e pan"]},
+  9:{kcal:1454.907,items:["Arroz integral con tomate","Ragout de pavo","Ensalada primavera","Froita e pan integral"]},
+
+  14:{kcal:907.216,items:["Crema de cabaciña","Tortilla de pataca","Leituga e millo","Froita e pan"]},
+  15:{kcal:1047.663,items:["Fabas estufadas","Filete ruso","Patacas asadas","Froita e pan integral"]},
+  16:{kcal:1054.266,items:["Ensalada de pasta","Pescada á galega","Ensalada de leituga, millo, cenoria e pemento morrón","Froita e pan"]},
+  17:{kcal:944.838,items:["Arroz integral con verduras e dados de tortilla francesa","Potaxe de garavanzos con espinacas e patacas","Leituga, tomate e olivas","Froita e pan"]},
+  18:{kcal:581.769,items:["Ensaladilla","Lombo asado en salsa de pementos","Iogur natural e pan integral"]},
+
+  21:{kcal:922.045,items:["Potaxe de lentellas","Salmón ao forno en salsa de laranxa","Pataca panadeira","Froita e pan"]},
+  22:{kcal:878.953,items:["Crema de verduras","Tortilla de cabaciña","Tomate natural","Froita e pan integral"]},
+  23:{kcal:831.907,items:["Arroz tres delicias con tomate","Estufado de porco con xudías","Iogur natural e pan"]},
+  24:{kcal:705.943,items:["Macarróns integrais","Boloñesa vexetal","Ensalada de leituga, millo, cenoria e olivas","Froita e pan"]},
+  25:{kcal:863.890,items:["Patacas aliñadas","Xamonciños de polo asados","Leituga, pemento morrón e cenoria","Froita e pan integral"]},
+
+  28:{kcal:761.274,items:["Espirais integrais salteados con champiñóns e taquiños de pavo","Ensalada de fabas","Froita e pan"]},
+  29:{kcal:809.725,items:["Crema de cabaciña e cenoria","Pescada en salsa verde","Patacas ao vapor con perexil","Iogur natural e pan integral"]},
+  30:{kcal:985.636,items:["Garavanzos estufados","Tortilla de pataca","Tomate e cenoria","Froita e pan"]}
 };
 
 const allEvents = [
-  { day:4, label:"Teatro 6º Infantil e 6º Primaria", icon:"🎭", color:"#ec4b8f" },
-  { day:10, label:"Acampada 5º e 6º Primaria", icon:"⛺", color:"#42c5cc", end:12 },
-  { day:15, label:"Excursión Infantil ao Lago", icon:"🚌", color:"#8e4be8" },
-  { day:17, label:"Festa Fin de Curso", icon:"🎉", color:"#f6b51e" },
-  { day:18, label:"Excursión 1º-4º Primaria a Cedeira", icon:"⛰️", color:"#2ea7e8" },
-  { day:19, label:"Ludyolimpiada", icon:"🏆", color:"#1620a5" },
-  { day:23, label:"Notas finais", icon:"📚", color:"#a0a0a0" },
-  { day:25, label:"Publicación da listaxe de libros e material", icon:"📋", color:"#a0a0a0" },
-  { day:26, label:"Acto despedida de 6º Primaria", icon:"👋", color:"#7ac75d" }
+  {day:22,label:"Claustro",icon:"👥",color:"#8e4be8"},
+  {day:25,label:"Vendima",icon:"🍇",color:"#7ac75d"},
+  {day:29,label:"Avaliación inicial",icon:"📚",color:"#f6b51e"}
 ];
 
 function nextSchoolMenuDate(date){
-  const d = new Date(date);
-  const day = d.getDay();
-  let dateNum = d.getDate();
+  const available = Object.keys(menus).map(Number).sort((a,b)=>a-b);
 
-  if(day === 6){ // sábado -> luns
-    dateNum += 2;
-  } else if(day === 0){ // domingo -> luns
-    dateNum += 1;
+  if(date.getFullYear() !== 2026 || date.getMonth() !== 8){
+    return available[0];
   }
 
-  if(!menus[dateNum]){
-    const future = Object.keys(menus).map(Number).find(n => n >= dateNum);
-    return future || 1;
-  }
-  return dateNum;
+  const n = date.getDate();
+  return available.find(day => day >= n) || available[available.length-1];
 }
 
 function setClock(){
   const now = new Date();
-  document.getElementById("hora").textContent = now.toLocaleTimeString("gl-ES",{hour:"2-digit",minute:"2-digit"});
-  document.getElementById("data").innerHTML = `${dias[now.getDay()]}, ${now.getDate()} de <strong>${meses[now.getMonth()]}</strong> de ${now.getFullYear()}`;
+
+  document.getElementById("hora").textContent =
+    now.toLocaleTimeString("gl-ES",{hour:"2-digit",minute:"2-digit"});
+
+  document.getElementById("data").innerHTML =
+    `${dias[now.getDay()]}, ${now.getDate()} de <strong>${meses[now.getMonth()]}</strong> de ${now.getFullYear()}`;
 }
 
 function setMenu(){
-  const today = new Date();
-  const menuDay = nextSchoolMenuDate(today);
+  const menuDay = nextSchoolMenuDate(new Date());
   const data = menus[menuDay];
 
   document.getElementById("menu-dia-num").textContent = menuDay;
-  document.getElementById("menu-data").textContent = `${dias[new Date(2026,5,menuDay).getDay()]}, ${menuDay} de xuño`;
+
+  document.getElementById("menu-data").textContent =
+    `${dias[new Date(2026,8,menuDay).getDay()]}, ${menuDay} de setembro`;
 
   const ul = document.getElementById("menu-list");
   ul.innerHTML = "";
-  data.items.forEach(item => {
+
+  data.items.forEach(item=>{
     const li = document.createElement("li");
     li.textContent = item;
     ul.appendChild(li);
   });
 
-  document.getElementById("nutrition").textContent = data.kcal ? `Información nutricional aprox. · ${data.kcal} Kcal. · ${data.nut}` : "Menú especial de fin de curso";
+  document.getElementById("nutrition").textContent =
+    `Información nutricional aprox. · ${String(data.kcal).replace(".",",")} Kcal.`;
 }
 
 function setEvents(){
   const now = new Date();
-  const today = now.getMonth() === 5 ? now.getDate() : 1;
-  const upcoming = allEvents.filter(e => (e.end || e.day) >= today).slice(0,6);
+
+  const today =
+    now.getFullYear()===2026 && now.getMonth()===8
+      ? now.getDate()
+      : 1;
+
+  const upcoming = allEvents
+    .filter(e=>(e.end || e.day)>=today)
+    .slice(0,6);
 
   const events = document.getElementById("events-list");
   events.innerHTML = "";
-  upcoming.forEach(e => {
+
+  upcoming.forEach(e=>{
     const div = document.createElement("div");
-    div.className = "event-row";
-    const dateLabel = e.end ? `${e.day}-${e.end} xuño` : `${e.day} xuño`;
-    div.innerHTML = `<b>${dateLabel}</b><span>${e.label}</span>`;
+    div.className = "erow";
+
+    div.innerHTML =
+      `<div class="edate">${e.day} set.</div><span>${e.label}</span>`;
+
     events.appendChild(div);
   });
 
   const notices = document.getElementById("avisos-list");
   notices.innerHTML = "";
-  upcoming.slice(0,4).forEach(e => {
+
+  upcoming.slice(0,4).forEach(e=>{
     const n = document.createElement("div");
     n.className = "notice";
-    const dateLabel = e.end ? `${e.day}, ${e.day+1} e ${e.end} de xuño` : `${e.day} de xuño`;
-    n.innerHTML = `<div class="notice-icon" style="background:${e.color}">${e.icon}</div><div><b>${dateLabel}</b><span>${e.label}</span></div>`;
+
+    n.innerHTML =
+      `<div class="ico" style="background:${e.color}">${e.icon}</div>
+       <div><b>${e.day} de setembro</b><span>${e.label}</span></div>`;
+
     notices.appendChild(n);
   });
 }
 
 function buildCalendar(){
   const root = document.getElementById("mini-calendar");
+  root.innerHTML = "";
+
   const weekdays = ["LUN","MAR","MÉR","XOV","VEN","SÁB","DOM"];
-  weekdays.forEach(w => {
+
+  weekdays.forEach(w=>{
     const el = document.createElement("div");
-    el.className = "weekday";
+    el.className = "wd";
     el.textContent = w;
     root.appendChild(el);
   });
 
   const eventByDay = {};
-  allEvents.forEach(e => {
-    for(let d=e.day; d <= (e.end || e.day); d++){
-      eventByDay[d] = e;
-    }
+  allEvents.forEach(e=>{
+    eventByDay[e.day] = e;
   });
 
+  const firstDay = new Date(2026,8,1);
+  const offset = (firstDay.getDay()+6)%7;
   const today = new Date();
-  for(let day=1; day<=35; day++){
+
+  for(let cell=0;cell<35;cell++){
     const el = document.createElement("div");
-    const date = day <= 30 ? day : "";
     el.className = "day";
-    if(day <= 30){
-      const weekDay = new Date(2026,5,day).getDay();
-      if(weekDay === 0 || weekDay === 6) el.classList.add("weekend");
-      if(today.getFullYear()===2026 && today.getMonth()===5 && today.getDate()===day) el.classList.add("today");
+
+    const day = cell-offset+1;
+
+    if(day>=1 && day<=30){
+
+      const weekDay = new Date(2026,8,day).getDay();
+
+      if(weekDay===0 || weekDay===6)
+        el.classList.add("weekend");
+
+      if(
+        today.getFullYear()===2026 &&
+        today.getMonth()===8 &&
+        today.getDate()===day
+      ){
+        el.classList.add("today");
+      }
 
       const ev = eventByDay[day];
+
       if(ev){
-        if(ev.color === "#ec4b8f") el.classList.add("pink");
-        else if(ev.color === "#42c5cc") el.classList.add("cyan");
-        else if(ev.color === "#8e4be8") el.classList.add("purple");
-        else if(ev.color === "#f6b51e") el.classList.add("yellow");
-        else if(ev.color === "#2ea7e8") el.classList.add("blue");
-        else if(ev.color === "#1620a5") el.classList.add("deep");
-        else if(ev.color === "#7ac75d") el.classList.add("green");
+        if(ev.color==="#8e4be8") el.classList.add("purple");
+        else if(ev.color==="#f6b51e") el.classList.add("yellow");
+        else if(ev.color==="#7ac75d") el.classList.add("green");
         else el.classList.add("gray");
       }
 
-      el.innerHTML = `<span>${date}</span>`;
-      if(ev && (day === ev.day || !ev.end)){
-        el.innerHTML += `<span class="event">${ev.label}</span>`;
+      el.innerHTML = `<span>${day}</span>`;
+
+      if(ev){
+        el.innerHTML += `<span class="evt">${ev.label}</span>`;
       }
     }
+
     root.appendChild(el);
   }
 }
 
 const weatherCodes = {
-  0:"Despexado",1:"Pouco nubrado",2:"Parcialmente nubrado",3:"Nubrado",
-  45:"Néboa",48:"Néboa",51:"Orballo feble",53:"Orballo",55:"Orballo intenso",
-  61:"Chuvia feble",63:"Chuvia",65:"Chuvia intensa",80:"Chuvascos",95:"Treboada"
+  0:"Despexado",
+  1:"Pouco nubrado",
+  2:"Parcialmente nubrado",
+  3:"Nubrado",
+  45:"Néboa",
+  48:"Néboa",
+  51:"Orballo feble",
+  53:"Orballo",
+  55:"Orballo intenso",
+  61:"Chuvia feble",
+  63:"Chuvia",
+  65:"Chuvia intensa",
+  80:"Chuvascos",
+  95:"Treboada"
 };
 
 async function loadWeather(){
   try{
-    const url = "https://api.open-meteo.com/v1/forecast?latitude=43.48&longitude=-8.23&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid";
+    const url =
+      "https://api.open-meteo.com/v1/forecast?latitude=43.48&longitude=-8.23&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid";
+
     const r = await fetch(url);
     const d = await r.json();
 
-    document.getElementById("temperatura").textContent = Math.round(d.current.temperature_2m)+"°C";
-    document.getElementById("estado").textContent = weatherCodes[d.current.weather_code] || "Tempo variable";
-    document.getElementById("humidade").textContent = Math.round(d.current.relative_humidity_2m)+"%";
-    document.getElementById("vento").textContent = Math.round(d.current.wind_speed_10m)+" km/h";
-    document.getElementById("maxima").textContent = Math.round(d.daily.temperature_2m_max[0])+"°C";
-    document.getElementById("minima").textContent = Math.round(d.daily.temperature_2m_min[0])+"°C";
+    document.getElementById("temperatura").textContent =
+      Math.round(d.current.temperature_2m)+"°C";
+
+    document.getElementById("estado").textContent =
+      weatherCodes[d.current.weather_code] || "Tempo variable";
+
+    document.getElementById("humidade").textContent =
+      Math.round(d.current.relative_humidity_2m)+"%";
+
+    document.getElementById("vento").textContent =
+      Math.round(d.current.wind_speed_10m)+" km/h";
+
+    document.getElementById("maxima").textContent =
+      Math.round(d.daily.temperature_2m_max[0])+"°C";
+
+    document.getElementById("minima").textContent =
+      Math.round(d.daily.temperature_2m_min[0])+"°C";
+
   }catch(e){
-    document.getElementById("estado").textContent = "Tempo non dispoñible";
+    document.getElementById("estado").textContent =
+      "Tempo non dispoñible";
   }
 }
 
 setClock();
-setInterval(setClock, 1000);
+setInterval(setClock,1000);
 setMenu();
 setEvents();
 buildCalendar();
 loadWeather();
-setInterval(loadWeather, 30*60*1000);
+setInterval(loadWeather,30*60*1000);
