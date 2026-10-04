@@ -168,6 +168,8 @@ function buildCalendar(){
 const now = new Date();
 const year = now.getFullYear();
 const month = now.getMonth();
+  document.getElementById("calendar-title").textContent =
+  `📅 CALENDARIO DE ${meses[month].toUpperCase()}`;
   const weekdays = ["LUN","MAR","MÉR","XOV","VEN","SÁB","DOM"];
 
   weekdays.forEach(w=>{
