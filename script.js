@@ -31,11 +31,54 @@ const menus = {
 };
 
 const allEvents = [
-  {day:22,label:"Claustro",icon:"👥",color:"#8e4be8"},
-  {day:25,label:"Vendima",icon:"🍇",color:"#7ac75d"},
-  {day:29,label:"Avaliación inicial",icon:"📚",color:"#f6b51e"}
-];
+  // SETEMBRO 2026
+  {month:9,day:25,label:"Vendima",icon:"🍇"},
 
+  // OUTUBRO 2026
+  {month:10,day:13,label:"Teatro 1º, 2º, 5º e 6º · Nana para un soldado",icon:"🎭"},
+  {month:10,day:27,label:"Recitado Carvalho Calero · 5 anos e 6º",icon:"📖"},
+  {month:10,day:26,endDay:30,label:"Semana do Samaín",icon:"🎃"},
+  {month:10,day:30,label:"Desfile do Samaín",icon:"🎃"},
+
+  // NOVEMBRO 2026
+  {month:11,day:20,label:"Magosto",icon:"🌰"},
+  {month:11,day:25,label:"Día Internacional contra a Violencia de Xénero (25N)",icon:"💜"},
+
+  // DECEMBRO 2026
+  {month:12,day:2,label:"Inicio recollida alimentos",icon:"🥫"},
+  {month:12,day:11,label:"Límite Ludicol",icon:"📝"},
+  {month:12,day:14,label:"Límite postais",icon:"💌"},
+  {month:12,day:14,endDay:18,label:"Visitas do Apalpador e Papá Noel",icon:"🎅"},
+  {month:12,day:15,label:"En Galego, de película",icon:"🎬"},
+  {month:12,day:21,label:"Festival de Nadal",icon:"🎄"},
+
+  // XANEIRO 2027
+  {month:1,day:4,endDay:15,label:"Reserva praza IES Concepción Arenal",icon:"🏫"},
+  {month:1,day:28,label:"Día da Paz (xoves)",icon:"🕊️"},
+
+  // FEBREIRO 2027
+  {month:2,day:8,endDay:10,label:"Entroido",icon:"🎭"},
+  {month:2,day:23,label:"Día de Rosalía",icon:"📚"},
+
+  // MARZO 2027
+  {month:3,day:8,label:"Día Internacional da Muller (8M)",icon:"💜"},
+  {month:3,day:22,endDay:29,label:"Semana Santa",icon:"🌼"},
+
+  // ABRIL 2027
+  {month:4,day:7,label:"Concerto 1º a 4º · Walt e Diana. A viaxe continúa",icon:"🎵"},
+  {month:4,day:23,label:"Día do Libro",icon:"📚"},
+
+  // MAIO 2027
+  {month:5,day:7,label:"Maios · Ferrol de Frores Cuberto",icon:"🌼"},
+  {month:5,day:14,label:"Letras Galegas",icon:"📖"},
+  {month:5,day:18,label:"Día non lectivo de libre elección",icon:"📅"},
+
+  // XUÑO 2027
+  {month:6,day:9,endDay:11,label:"Acampada",icon:"⛺"},
+  {month:6,day:14,endDay:17,label:"Excursións",icon:"🚌"},
+  {month:6,day:18,label:"Festival",icon:"🎉"},
+  {month:6,day:21,label:"Ludylimpiadas e último día de clase",icon:"🏅"}
+];
 function nextSchoolMenuDate(date){
   const available = Object.keys(menus).map(Number).sort((a,b)=>a-b);
 
@@ -132,9 +175,15 @@ function buildCalendar(){
     root.appendChild(el);
   });
 
-  const eventByDay = {};
-  allEvents.forEach(e=>{
-    eventByDay[e.day] = e;
+const eventByDay = {};
+
+allEvents
+  .filter(e => e.month === month + 1)
+  .forEach(e => {
+    const end = e.endDay || e.day;
+    for (let d = e.day; d <= end; d++) {
+      eventByDay[d] = e;
+    }
   });
 
   const firstDay = new Date(2026,8,1);
