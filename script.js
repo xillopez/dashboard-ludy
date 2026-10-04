@@ -107,7 +107,7 @@ function setMenu(){
   document.getElementById("menu-dia-num").textContent = menuDay;
 
   document.getElementById("menu-data").textContent =
-    `${dias[new Date(2026,8,menuDay).getDay()]}, ${menuDay} de setembro`;
+`${dias[new Date().getDay()]}, ${menuDay} de ${meses[new Date().getMonth()]}`;
 
   const ul = document.getElementById("menu-list");
   ul.innerHTML = "";
