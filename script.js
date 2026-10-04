@@ -165,7 +165,9 @@ function setEvents(){
 function buildCalendar(){
   const root = document.getElementById("cal");
   root.innerHTML = "";
-
+const now = new Date();
+const year = now.getFullYear();
+const month = now.getMonth();
   const weekdays = ["LUN","MAR","MÉR","XOV","VEN","SÁB","DOM"];
 
   weekdays.forEach(w=>{
@@ -186,7 +188,7 @@ allEvents
     }
   });
 
-  const firstDay = new Date(2026,8,1);
+  const firstDay = new Date(year,month,1);
   const offset = (firstDay.getDay()+6)%7;
   const today = new Date();
 
