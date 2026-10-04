@@ -156,7 +156,7 @@ function setEvents(){
 
     n.innerHTML =
       `<div class="ico" style="background:${e.color}">${e.icon}</div>
-       <div><b>${e.day} de setembro</b><span>${e.label}</span></div>`;
+<div><b>${e.day} de ${meses[e.month-1]}</b><span>${e.label}</span></div>`;
 
     notices.appendChild(n);
   });
