@@ -2,25 +2,32 @@ const dias = ["domingo","luns","martes","mércores","xoves","venres","sábado"];
 const meses = ["xaneiro","febreiro","marzo","abril","maio","xuño","xullo","agosto","setembro","outubro","novembro","decembro"];
 
 const menus = {
-  9:{kcal:766.943,items:["Pasta á napolitana","Tortilla de cabaciña","Tomate natural","Froita e pan"]},
-  10:{kcal:778.703,items:["Minestra con allada e pataca","Lombo natural adubado","Ensalada de leituga e olivas","Iogur natural e pan"]},
-  11:{kcal:1454.907,items:["Arroz integral con tomate","Ragout de pavo","Ensalada primavera","Froita e pan integral"]},
+  1:{kcal:771.991,items:["Arroz con tomate","Lombo natural adubado","Leituga e olivas","Froita e pan branco"]},
+  2:{kcal:1041.563,items:["Crema de brócoli e cenoria","Filete de polo ao forno en salsa de trigueros","Leituga e remolacha","Froita e pan integral"]},
 
-  14:{kcal:907.216,items:["Crema de cabaciña","Tortilla de pataca","Leituga e millo","Froita e pan"]},
-  15:{kcal:1047.663,items:["Fabas estufadas","Filete ruso","Patacas asadas","Froita e pan integral"]},
-  16:{kcal:1054.266,items:["Ensalada de pasta","Pescada á galega","Ensalada de leituga, millo, cenoria e pemento morrón","Froita e pan"]},
-  17:{kcal:944.838,items:["Arroz integral con verduras e dados de tortilla francesa","Potaxe de garavanzos con espinacas e patacas","Leituga, tomate e olivas","Froita e pan"]},
-  18:{kcal:581.769,items:["Ensaladilla","Lombo asado en salsa de pementos","Iogur natural e pan integral"]},
+  5:{kcal:704.650,items:["Potaxe de lentellas","Pescada á romana","Leituga e millo","Iogur natural e pan branco"]},
+  6:{kcal:850.148,items:["Sopa de estreliñas","Tortilla de cabaciña","Tomate natural","Froita e pan branco"]},
+  7:{kcal:886.288,items:["Arroz integral con verduras e xamón iork","Guiso de garavanzos","Froita e pan branco"]},
+  8:{kcal:897.517,items:["Ensalada de tempada","Polo ao chilindrón","Patacas asadas","Froita e pan branco"]},
+  9:{kcal:595.912,items:["Minestra salteada con pataca dado","Raxo de porco","Ensalada de leituga, tomate e cenoria","Froita e pan integral"]},
 
-  21:{kcal:922.045,items:["Potaxe de lentellas","Salmón ao forno en salsa de laranxa","Pataca panadeira","Froita e pan"]},
-  22:{kcal:878.953,items:["Crema de verduras","Tortilla de cabaciña","Tomate natural","Froita e pan integral"]},
-  23:{kcal:831.907,items:["Arroz tres delicias con tomate","Estufado de porco con xudías","Iogur natural e pan"]},
-  24:{kcal:705.943,items:["Macarróns integrais","Boloñesa vexetal","Ensalada de leituga, millo, cenoria e olivas","Froita e pan"]},
-  25:{kcal:863.890,items:["Patacas aliñadas","Xamonciños de polo asados","Leituga, pemento morrón e cenoria","Froita e pan integral"]},
+  12:{kcal:0,items:["Festivo"]},
+  13:{kcal:1122.151,items:["Pasta integral con tomate","Polo ás finas herbas","Leituga e tomate","Froita e pan integral"]},
+  14:{kcal:837.703,items:["Xudías con allada, pataca, ovo relado e picadillo de chourizo","Fabas estufadas","Froita e pan branco"]},
+  15:{kcal:1000.462,items:["Ensalada de garavanzos","Abadexo en salsa de cabaciña","Patacas ao vapor","Iogur natural e pan branco"]},
+  16:{kcal:1176.185,items:["Crema de coliflor e mazá","Tortilla de pataca","Leituga e remolacha","Froita e pan integral"]},
 
-  28:{kcal:761.274,items:["Espirais integrais salteados con champiñóns e taquiños de pavo","Ensalada de fabas","Froita e pan"]},
-  29:{kcal:809.725,items:["Crema de cabaciña e cenoria","Pescada en salsa verde","Patacas ao vapor con perexil","Iogur natural e pan integral"]},
-  30:{kcal:985.636,items:["Garavanzos estufados","Tortilla de pataca","Tomate e cenoria","Froita e pan"]}
+  19:{kcal:725.708,items:["Sopa de piñóns","Xurelo á galega","Pataca cocida","Froita e pan branco"]},
+  20:{kcal:881.104,items:["Arroz integral","Estufado de porco","Ensalada de leituga, tomate, millo e cenoria","Iogur natural e pan integral"]},
+  21:{kcal:749.303,items:["Crema campeira","Tortilla de cabaciña","Leituga e tomate","Froita e pan branco"]},
+  22:{kcal:816.755,items:["Garavanzos con acelgas, espinacas e cabaza","Pescada á romana","Ensalada de leituga, millo e olivas","Froita e pan branco"]},
+  23:{kcal:539.955,items:["Guiso de chícharos e cenorias con taquiños de pavo","Lentellas con verduras","Froita e pan integral"]},
+
+  26:{kcal:738.247,items:["Macarróns integrais á napolitana","Filete de lombo en salsa de laranxa","Leituga, tomate e millo","Iogur natural e pan branco"]},
+  27:{kcal:816.090,items:["Ensalada de arroz con dados de xamón iork","Tacos con verduriñas","Froita e pan integral"]},
+  28:{kcal:718.278,items:["Fabas pintas con cabaza e porro","Guiso de luras con patacas","Froita e pan branco"]},
+  29:{kcal:682.463,items:["Ensaladilla","Polo ao allo","Leituga e pemento morrón","Froita e pan branco"]},
+  30:{kcal:797.529,items:["Crema de cabaza","Tortilla de pataca","Ensalada de leituga, millo e cenoria","Froita e pan integral"]}
 };
 
 const allEvents = [
