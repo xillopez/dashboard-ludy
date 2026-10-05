@@ -53,8 +53,8 @@ h1{margin:0;color:var(--purple);font-size:42px;line-height:1}
 
 main{
   display:grid;
-  grid-template-columns:28% 44% 28%;
-  grid-template-rows:48% 52%;
+  grid-template-columns:28fr 44fr 28fr;
+  grid-template-rows:48fr 52fr;
   gap:14px;
   min-height:0;
 }
@@ -117,9 +117,9 @@ main{
 .cal{height:calc(100% - 68px);display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:38px repeat(5,1fr);border:1px solid #d8deea;border-radius:14px;overflow:hidden}
 .wd{background:#0f4382;color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:950}
 .day{position:relative;padding:7px;border-right:1px solid #dce2ec;border-bottom:1px solid #dce2ec;font-size:19px;font-weight:900;background:white}
-.weekend{background:linear-gradient(135deg,#dfffac,#c9ff7d)}
+.weekend{background:#f3f5f8}
 .today{outline:5px solid var(--violet);outline-offset:-5px}
-.evt{display:block;margin-top:5px;font-size:11px;line-height:1.05;font-weight:950}
+.evt{display:block;margin-top:4px;padding:3px;border-radius:4px;font-size:11px;line-height:1.1;font-weight:850}
 .pink{background:#f45c9a;color:white}
 .cyan{background:#72d6dc}
 .purple{background:#8b45dc;color:white}
@@ -128,7 +128,7 @@ main{
 .deep{background:#1020ad;color:white}
 .gray{background:#ddd}
 .green{background:#bdef92}
-.legend{height:38px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;font-weight:800}
+.legend{height:38px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:800;flex-wrap:wrap}
 .dot{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:4px;vertical-align:-2px}
 
 /* DEREITA: máis estreita visualmente e máis alta */
@@ -136,7 +136,7 @@ main{
   grid-column:3;
   grid-row:1/3;
   display:grid;
-  grid-template-rows:50% 50%;
+  grid-template-rows:1fr 1fr;
   gap:14px;
   min-height:0;
 }
@@ -174,7 +174,7 @@ main{
 
  <section class="card menu">
   <div class="menuhead"><h2>🍽️ MENÚ DE HOXE</h2><div id="menu-data" class="pill">--</div></div>
-  <div class="mcontent"><div class="badge"><span>MENÚ</span><strong id="menu-dia-num">--</strong><span>SETEMBRO</span></div><ul id="menu-list"></ul><div class="plate">🍽️</div></div>
+  <div class="mcontent"><div class="badge"><span>MENÚ</span><strong id="menu-dia-num">--</strong><span id="menu-mes">--</span></div><ul id="menu-list"></ul><div class="plate">🍽️</div></div>
   <div id="nutrition" class="nut"></div>
  </section>
 
@@ -182,6 +182,7 @@ main{
 <h2 id="calendar-title">📅 CALENDARIO</h2>
   <div id="cal" class="cal"></div>
   <div class="legend">
+    <span><i class="dot" style="border:3px solid #7b35c5"></i>Hoxe</span>
     <span><i class="dot" style="background:#8b45dc"></i>Actividades</span>
     <span><i class="dot" style="background:#ffd84f"></i>Celebracións</span>
     <span><i class="dot" style="background:#54d0d4"></i>Saídas</span>
