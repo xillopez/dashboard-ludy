@@ -82,7 +82,7 @@ const allEvents = [
 // O menú facilitado corresponde a outubro de 2026.
 const menuPeriod = {year:2026, month:10};
 allEvents.push(
-  {month:11,day:2,label:"Día non lectivo de libre elección (solicitado)",icon:"📅"},
+  {month:11,day:2,label:"Día non lectivo de libre elección",icon:"📅"},
   {month:12,day:7,label:"Día do Ensino",icon:"📅"},
   {month:12,day:8,label:"Inmaculada Concepción",icon:"📅"},
   {month:12,day:22,endMonth:1,endYear:2027,endDay:7,label:"Vacacións de Nadal",icon:"🎄"},
@@ -98,13 +98,12 @@ const programs = [
   "Plan Director (Policía Nacional) · 5º e 6º",
   "Visita da matrona Paula Pita · charla de sexualidade para 6º"
 ];
-const colors = {purple:"#8b45dc",yellow:"#ffd84f",cyan:"#72d6dc",deep:"#1020ad",gray:"#ddd"};
+const colors = {purple:"#8b45dc",yellow:"#ffd84f",cyan:"#72d6dc",deep:"#1020ad",orange:"#ffb85c",gray:"#ddd"};
 allEvents.forEach(e=>{
   e.year = e.month >= 9 ? 2026 : 2027;
   e.start = new Date(e.year,e.month-1,e.day);
   e.finish = new Date(e.endYear || e.year,(e.endMonth || e.month)-1,e.endDay || e.day);
-  e.category = /Excursión|Acampada/.test(e.label) ? "cyan" : /Ludylimpiadas/.test(e.label) ? "deep" : /Vendima|Samaín|Magosto|Festival|Día da|Día de Rosalía|Maios|Letras|Día do Libro|Día Internacional/.test(e.label) ? "yellow" : /Teatro|Recitado|Concerto|película|Visitas/.test(e.label) ? "purple" : "gray";
-  if(e.month===5 && e.day===18) e.label += " (solicitado)";
+  e.category = /Desfile do Samaín/.test(e.label) ? "orange" : /Excursión|Acampada/.test(e.label) ? "cyan" : /Ludylimpiadas/.test(e.label) ? "deep" : /Vendima|Samaín|Magosto|Festival|Día da|Día de Rosalía|Maios|Letras|Día do Libro|Día Internacional/.test(e.label) ? "yellow" : /Teatro|Recitado|Concerto|película|Visitas/.test(e.label) ? "purple" : "gray";
 });
 function schoolNow(){
   const parts = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Madrid",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date());
@@ -148,17 +147,25 @@ function setEvents(now=schoolNow()){
   });
   if(!upcoming.length) events.textContent="Non hai próximos eventos programados.";
   const notices=document.getElementById("notices");notices.innerHTML="";
-  upcoming.slice(0,3).forEach(e=>{
+  // Avisos independentes das actividades do calendario.
+  const activeNotices=[];
+  if(now<=new Date(2026,9,6)){
+    activeNotices.push({icon:"📣",title:"6 de outubro de 2026",text:"Folga do ensino concertado"});
+  }
+  const nonTeachingDays=[
+    {date:new Date(2026,10,2),label:"2 de novembro de 2026"},
+    {date:new Date(2027,4,18),label:"18 de maio de 2027"}
+  ].filter(item=>item.date>=now);
+  if(nonTeachingDays.length){
+    activeNotices.push({icon:"📅",title:"Días non lectivos de libre elección aprobados",text:nonTeachingDays.map(item=>item.label).join(" e ")});
+  }
+  activeNotices.forEach(notice=>{
     const row=document.createElement("div");row.className="notice";
-    row.innerHTML=`<div class="ico" style="background:${colors[e.category]}">${e.icon}</div><div><b>${eventDate(e)}${e.start<now ? " · En curso" : ""}</b><span>${e.label}</span></div>`;
+    row.innerHTML=`<div class="ico">${notice.icon}</div><div><b>${notice.title}</b><span>${notice.text}</span></div>`;
     notices.appendChild(row);
   });
-  if(now>=new Date(2026,8,1) && now<=new Date(2027,5,21)){
-    const eligible=programs.filter(p=>!p.startsWith("Natación") || now>=new Date(2027,0,1));
-    const row=document.createElement("div");row.className="notice";
-    row.innerHTML=`<div class="ico">🏫</div><div><b>Programas do curso · sen data concreta</b><span>${eligible[Math.floor(Date.now()/30000)%eligible.length]}</span></div>`;
-    notices.appendChild(row);
-  }
+  if(!activeNotices.length) notices.textContent="Non hai avisos vixentes.";
+
 }
 function buildCalendar(now=schoolNow()){
   const root=document.getElementById("cal");root.innerHTML="";
@@ -171,6 +178,8 @@ function buildCalendar(now=schoolNow()){
   ["LUN","MAR","MÉR","XOV","VEN","SÁB","DOM"].forEach(w=>{const el=document.createElement("div");el.className="wd";el.textContent=w;root.appendChild(el);});
   for(let cell=0;cell<rows*7;cell++){
     const el=document.createElement("div");el.className="day";
+    el.style.gridColumn=String(cell%7+1);
+    el.style.gridRow=String(Math.floor(cell/7)+2);
     const day=cell-offset+1;
     if(day>=1 && day<=days){
       const date=new Date(year,month,day);
@@ -178,10 +187,28 @@ function buildCalendar(now=schoolNow()){
       if(day===now.getDate()){el.classList.add("today");el.setAttribute("aria-label",`Hoxe, ${day}`);}
       const matches=allEvents.filter(e=>e.start<=date && e.finish>=date);
       el.innerHTML=`<span>${day}</span>`;
-      matches.forEach(e=>{const label=document.createElement("span");label.className=`evt ${e.category}`;label.textContent=e.label;el.appendChild(label);});
+      if(matches.some(e=>e.label==="Semana do Samaín")) el.classList.add("has-week-bar");
+      matches.filter(e=>e.label!=="Semana do Samaín").forEach(e=>{const label=document.createElement("span");label.className=`evt ${e.category}`;label.textContent=e.label;el.appendChild(label);});
     }
     root.appendChild(el);
   }
+  // Unha barra por fila para a semana, sen ocultar os eventos diarios.
+  allEvents.filter(e=>e.label==="Semana do Samaín").forEach(e=>{
+    const start=Math.max(1,e.start.getFullYear()===year && e.start.getMonth()===month ? e.day : 1);
+    if(e.finish<new Date(year,month,1) || e.start>new Date(year,month,days)) return;
+    const end=e.finish.getFullYear()===year && e.finish.getMonth()===month ? e.finish.getDate() : days;
+    for(let day=start;day<=end;){
+      const cell=offset+day-1,column=cell%7;
+      const length=Math.min(7-column,end-day+1);
+      const bar=document.createElement("div");
+      bar.className="week-event yellow";
+      bar.style.gridColumn=`${column+1} / span ${length}`;
+      bar.style.gridRow=String(Math.floor(cell/7)+2);
+      bar.textContent="Semana do Samaín · 26–30 outubro";
+      root.appendChild(bar);
+      day+=length;
+    }
+  });
 }
 
 const weatherCodes = {
