@@ -349,64 +349,29 @@ body{
   justify-content:center;
   font-size:16px;
 }
-.day{
-  position:relative;
-  border-right:1px solid #e2e6ef;
-  border-bottom:1px solid #e2e6ef;
-  padding:9px;
-  font-size:20px;
-  font-weight:800;
-  background:#fff;
-}
-.day.weekend{background:#d8ff9b}
-.day.today{outline:4px solid var(--purple); outline-offset:-4px}
-.day .event{
-  margin-top:6px;
-  display:block;
-  font-size:13px;
-  line-height:1.15;
-  color:#111827;
-  font-weight:800;
-}
-.day.purple{background:#8e4be8;color:#fff}
-.day.pink{background:#ff5eb1;color:#fff}
-.day.blue{background:#37aeea;color:#fff}
-.day.cyan{background:#55d5d7}
-.day.yellow{background:#ffe163}
-.day.deep{background:#1900a8;color:#fff}
-.day.gray{background:#d9d9d9}
-.day.green{background:#c4ff6c}
-.legend{
-  margin-top:12px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  font-size:17px;
-  font-weight:700;
-}
-.dot{
-  width:16px;height:16px;border-radius:50%;
-  display:inline-block;margin-right:6px;vertical-align:-2px;
-}
-.dot.purple{background:#8e4be8}
-.dot.yellow{background:#f4bd1b}
-.dot.blue{background:#37aeea}
-.dot.green{background:#7ac75d}
 
-footer{
-  background:var(--navy);
-  color:#70c9ff;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  font-size:28px;
-  font-weight:900;
-  box-shadow:var(--shadow);
-}
-footer b{color:#f6c640}
+/* Adaptación á pantalla da televisión */
 
-@media (max-width:1200px){
-  .screen{transform-origin:top left}
+@media (min-width:1201px) {
+  .day {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .day .event {
+    margin-top: 3px;
+    font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .legend {
+    margin-top: 5px;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
 }
