@@ -119,7 +119,13 @@ function eventDate(e,short=false){
 }
 function setClock(){
   const now=schoolNow();
-  document.getElementById("hora").textContent=new Date().toLocaleTimeString("gl-ES",{timeZone:"Europe/Madrid",hour:"2-digit",minute:"2-digit"});
+document.getElementById("hora").textContent =
+  new Date().toLocaleTimeString("gl-ES", {
+    timeZone: "Europe/Madrid",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23"
+  });
   document.getElementById("data").textContent=`${dias[now.getDay()]}, ${now.getDate()} de ${meses[now.getMonth()]} de ${now.getFullYear()}`;
 }
 function setMenu(now=schoolNow()){
