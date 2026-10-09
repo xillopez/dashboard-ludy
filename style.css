@@ -333,9 +333,10 @@ body{
 }
 .mini-calendar{
   height:calc(100% - 90px);
+  min-height:0;
   display:grid;
-  grid-template-columns:repeat(7,1fr);
-  grid-template-rows:36px repeat(5,1fr);
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  grid-template-rows:36px repeat(5,minmax(0,1fr));
   border:1px solid #d7dce8;
   border-radius:12px;
   overflow:hidden;
