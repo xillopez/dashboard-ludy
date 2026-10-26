@@ -199,6 +199,44 @@ main{
 .day.nonlectivo{background:#f3f5f8}
 .day .festivo-label{display:block;margin-top:5px;color:#586174;font-size:12px;font-weight:800;line-height:1.15}
 
+
+/* SAMAÍN 2026: activo unicamente do 27 ao 30 de outubro */
+body.sam-2026{--purple:#ffac40;--violet:#c879ff;--ink:#f8ecdc;--shadow:0 8px 28px rgba(0,0,0,.38);background:radial-gradient(ellipse at 50% 0%,#503060,#120f25 75%);}
+.sam-2026 header,.sam-2026 .card{background:#251d38;color:#fff0d8;border:1px solid #80516e;}
+.sam-2026 header{background:linear-gradient(110deg,#251b39,#44233b 60%,#251b39)}
+.sam-2026 h1,.sam-2026 .card h2,.sam-2026 #data,.sam-2026 #hora{color:#ffba54}
+.sam-2026 .brand p{color:#f3c6f5}
+.sam-2026 .weather{background:linear-gradient(140deg,#30214f,#57345e)}
+.sam-2026 .day{background:#2d263e;color:#fff0dc;border-color:#5e4965}
+.sam-2026 .weekend,.sam-2026 .day.nonlectivo{background:#3b3047}
+.sam-2026 .wd{background:#6a3459}
+.sam-2026 .today{outline-color:#ff9e36}
+.sam-2026 .side>.extraescolares-tv{background:#342444;color:#ffbd68}
+.sam-2026 .extraescolar-tv,.sam-2026 #extraescolares-lista .extraescolar-tv{background:#473250;color:#fff1df;border-color:#8e5e80}
+.sam-2026 .notice b{color:#ffbb68}
+.sam-2026 .notice,.sam-2026 .erow{border-color:#6a526d}
+.sam-2026 .edate,.sam-2026 .pill,.sam-2026 .nut{background:#54335a;color:#ffdf9d}
+.sam-2026 .badge{background:#493950;color:#ffdf9d}
+.sam-2026 .stats{background:#694466}
+.sam-2026 .sun{background:radial-gradient(circle at 35% 35%,#fff0aa,#ffb147 55%,#d55b37)}
+#sam-decor{display:none;pointer-events:none;position:fixed;inset:0;z-index:30;overflow:hidden}
+.sam-2026 #sam-decor{display:block}
+.sam-moon{position:absolute;right:4%;top:2%;width:78px;height:78px;border-radius:50%;background:#ffe7a4;box-shadow:0 0 32px #ffb15a88;opacity:.85}
+.sam-bat{position:absolute;font-size:32px;animation:sam-fly 13s linear infinite;filter:drop-shadow(0 2px 4px #000)}
+.sam-bat:nth-child(2){top:8%;left:-10%;animation-delay:-4s}.sam-bat:nth-child(3){top:65%;left:-10%;animation-delay:-9s;font-size:25px}
+@keyframes sam-fly{0%{transform:translateX(-5vw) translateY(0) rotate(-10deg)}50%{transform:translateX(55vw) translateY(-25px) rotate(10deg)}100%{transform:translateX(115vw) translateY(12px) rotate(-10deg)}}
+#sam-tag{position:fixed;bottom:5px;left:50%;transform:translateX(-50%);z-index:32;color:#ffd294;background:#422445;border:1px solid #ab6e63;border-radius:18px;padding:3px 15px;font-size:13px;font-weight:900;display:none;pointer-events:none}
+.sam-2026 #sam-tag{display:block}
+#sam-audio{position:fixed;z-index:50;bottom:10px;right:14px;border:1px solid #f5aa54;border-radius:16px;background:#432547;color:#fff0d8;padding:9px 13px;font-weight:800;cursor:pointer;display:none}
+.sam-2026 #sam-audio{display:block}
+#sam-scare{position:fixed;inset:0;z-index:45;pointer-events:none;display:none;align-items:center;justify-content:center;background:#150c26a8;animation:sam-in .35s ease-out}
+#sam-scare.on{display:flex}
+#sam-scare .symbol{font-size:min(25vw,220px);filter:drop-shadow(0 0 35px #ff9639);animation:sam-bounce 1s ease-in-out infinite alternate}
+#sam-scare .caption{font-size:clamp(25px,4vw,55px);font-weight:950;color:#ffdb8b;text-align:center;text-shadow:0 4px 15px #000}
+@keyframes sam-bounce{to{transform:scale(1.15) rotate(5deg)}}
+@keyframes sam-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.sam-bat,#sam-scare .symbol{animation:none}}
+
 </style>
 </head>
 <body>
@@ -355,6 +393,58 @@ main{
   }
 })();
 
+</script>
+
+<script>
+(()=>{
+  'use strict';
+  const zone='Europe/Madrid', horarios=['09:00','09:50','10:40','11:30','12:00','12:20','13:10','13:50','14:00'];
+  const escenas=[['🧙','A bruxa esperta!'],['👻','Pantasmas no corredor!'],['🐺','Ouvea o lobo!'],['⚡','Achégase a tormenta!'],['🦇','Voan os morcegos!'],['🚪','Ábrese a porta encantada!'],['💀','Bailan os esqueletos!'],['🧛','Chegou Drácula!'],['🎃','Ata mañá, criaturas!']];
+  const parametros=new URLSearchParams(location.search);
+  // ?samain=proba permite revisar a decoración fóra das datas; non activa horarios reais.
+  const proba=parametros.get('samain')==='proba' || location.protocol==='file:';
+  const formato=new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  function agora(){const x=Object.fromEntries(formato.formatToParts(new Date()).map(p=>[p.type,p.value]));return {data:`${x.year}-${x.month}-${x.day}`,hora:`${x.hour}:${x.minute}`}}
+  function activo(){const d=agora().data;return proba||(d>='2026-10-27'&&d<='2026-10-30')}
+  const decor=document.createElement('div');decor.id='sam-decor';decor.innerHTML='<div class="sam-moon"></div><span class="sam-bat">🦇</span><span class="sam-bat">🦇</span>';
+  const tag=document.createElement('div');tag.id='sam-tag';tag.textContent='🎃 SAMAÍN · COLEXIO LUDY · 27–30 OUTUBRO 🎃';
+  const boton=document.createElement('button');boton.id='sam-audio';boton.textContent='🔊 Activar sons';boton.type='button';
+  const scare=document.createElement('div');scare.id='sam-scare';scare.innerHTML='<div style="text-align:center"><div class="symbol"></div><div class="caption"></div></div>';
+  document.body.append(decor,tag,scare,boton);
+  const arquivos=['bruxa.mp3','pantasmas.mp3','lobo.mp3','tormenta.mp3','morcegos.mp3','porta.mp3','esqueleto.mp3','dracula.mp3','despedida.mp3'];
+  let habilitado=false, ultimaClave='',timer=null;
+  let audio=null;
+  function son(indice){
+    if(!habilitado)return;
+    if(audio){audio.pause();audio.removeAttribute('src');audio.load();}
+    const actual=new Audio('sons/'+arquivos[indice]);
+    audio=actual;
+    actual.preload='auto';actual.volume=0.65;
+    actual.play().catch((erro)=>{
+      if(actual!==audio || erro.name==='AbortError')return;
+      boton.textContent='⚠️ Non se puido reproducir '+arquivos[indice];
+      boton.style.opacity='1';
+      console.warn('Erro de reprodución:',arquivos[indice],erro);
+    });
+  }
+  function animar(i){const [emoji,txt]=escenas[i];scare.querySelector('.symbol').textContent=emoji;scare.querySelector('.caption').textContent=txt;scare.classList.add('on');clearTimeout(timer);timer=setTimeout(()=>scare.classList.remove('on'),4400)}
+  function lanzar(i){animar(i);son(i)}
+  boton.addEventListener('click',()=>{
+    habilitado=true;boton.textContent='🔊 Sons activados';
+    // A interacción do usuario habilita a reprodución automática posterior.
+    audio.muted=true;audio.play().catch(()=>{}).finally(()=>{audio.pause();audio.muted=false});
+  });
+  function revisar(){const estado=activo();document.body.classList.toggle('sam-2026',estado);if(!estado)return;
+    const a=agora();if(proba)return;const i=horarios.indexOf(a.hora);if(i<0)return;
+    const clave=a.data+' '+a.hora;
+    // Evita repeticións no mesmo minuto mesmo se se recarga a páxina.
+    if(ultimaClave===clave||sessionStorage.getItem('samain-ultimo-son')===clave)return;
+    ultimaClave=clave;sessionStorage.setItem('samain-ultimo-son',clave);lanzar(i);
+  }
+  revisar();setInterval(revisar,1000);
+  // Proba visual e sonora manual: engadir ?samain=proba á URL e premer a tecla S.
+  const test=document.createElement('button');test.id='sam-test';test.textContent='👻 PROBAR EFECTO';test.style.cssText='position:fixed;bottom:58px;right:14px;z-index:80;background:#ffb34f;color:#24152d;border:0;border-radius:12px;padding:12px 18px;font-weight:900;cursor:pointer;display:none';document.body.append(test);if(activo())test.style.display='block';test.addEventListener('click',()=>lanzar(Math.floor(Math.random()*escenas.length)));document.addEventListener('keydown',e=>{if(activo()&&e.key.toLowerCase()==='s')lanzar(Math.floor(Math.random()*escenas.length))});
+})();
 </script>
 </body>
 </html>
