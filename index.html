@@ -446,5 +446,60 @@ body.sam-2026{--purple:#ffac40;--violet:#c879ff;--ink:#f8ecdc;--shadow:0 8px 28p
   const test=document.createElement('button');test.id='sam-test';test.textContent='👻 PROBAR EFECTO';test.style.cssText='position:fixed;bottom:58px;right:14px;z-index:80;background:#ffb34f;color:#24152d;border:0;border-radius:12px;padding:12px 18px;font-weight:900;cursor:pointer;display:none';document.body.append(test);if(activo())test.style.display='block';test.addEventListener('click',()=>lanzar(Math.floor(Math.random()*escenas.length)));document.addEventListener('keydown',e=>{if(activo()&&e.key.toLowerCase()==='s')lanzar(Math.floor(Math.random()*escenas.length))});
 })();
 </script>
+
+<script>
+// Saída escolar do 5 de novembro de 2026: calendario e próximos eventos.
+(()=>{
+ const titulo='Museo do Humor de Fene · 1º e 2º EP';
+ function actualizar(){
+  const cal=document.getElementById('cal');
+  const encabezado=document.getElementById('calendar-title');
+  if(cal && encabezado && /novembro/i.test(encabezado.textContent) && /2026/.test(encabezado.textContent)){
+   for(const cela of cal.querySelectorAll('.day')){
+    if(cela.firstElementChild?.textContent.trim()==='5' && !cela.querySelector('.excursion-fene')){
+     const evento=document.createElement('span');evento.className='evt cyan excursion-fene';evento.textContent='Museo Humor · 1º-2º';cela.append(evento);
+    }
+   }
+  }
+  const lista=document.getElementById('elist');
+  if(lista && !lista.querySelector('.excursion-fene') && new Date() < new Date('2026-11-06T00:00:00+01:00')){
+   const fila=document.createElement('div');fila.className='erow excursion-fene';
+   fila.innerHTML='<div class="edate">05 NOV</div><span>Excursión 1º e 2º EP · Museo do Humor de Fene</span>';
+   lista.prepend(fila);
+  }
+ }
+ const cal=document.getElementById('cal'),lista=document.getElementById('elist');
+ if(cal)new MutationObserver(actualizar).observe(cal,{childList:true});
+ if(lista)new MutationObserver(actualizar).observe(lista,{childList:true});
+ actualizar();
+})();
+</script>
+<script>
+// Saída escolar do 16 de novembro de 2026: calendario e próximos eventos.
+(()=>{
+ const actualizar=()=>{
+  const cal=document.getElementById('cal');
+  const encabezado=document.getElementById('calendar-title');
+  if(cal && encabezado && /novembro/i.test(encabezado.textContent) && /2026/.test(encabezado.textContent)){
+   for(const cela of cal.querySelectorAll('.day')){
+    if(cela.firstElementChild?.textContent.trim()==='16' && !cela.querySelector('.excursion-ciencias')){
+     const evento=document.createElement('span');evento.className='evt cyan excursion-ciencias';
+     evento.textContent='Casa Ciencias · 3º-4º';cela.append(evento);
+    }
+   }
+  }
+  const lista=document.getElementById('elist');
+  if(lista && !lista.querySelector('.excursion-ciencias') && new Date() < new Date('2026-11-17T00:00:00+01:00')){
+   const fila=document.createElement('div');fila.className='erow excursion-ciencias';
+   fila.innerHTML='<div class="edate">16 NOV</div><span>Excursión 3º e 4º EP · Casa das Ciencias da Coruña</span>';
+   lista.prepend(fila);
+  }
+ };
+ const cal=document.getElementById('cal'),lista=document.getElementById('elist');
+ if(cal)new MutationObserver(actualizar).observe(cal,{childList:true});
+ if(lista)new MutationObserver(actualizar).observe(lista,{childList:true});
+ actualizar();
+})();
+</script>
 </body>
 </html>
