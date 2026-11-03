@@ -237,6 +237,105 @@ body.sam-2026{--purple:#ffac40;--violet:#c879ff;--ink:#f8ecdc;--shadow:0 8px 28p
 @keyframes sam-in{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){.sam-bat,#sam-scare .symbol{animation:none}}
 
+
+/* ==============================================================
+   AXUSTE DEFINITIVO TV 16:9 · 03/11/2026
+   Tipografía compacta e alto útil real; evita ocultar liñas.
+   ============================================================= */
+.screen {
+  padding:8px 10px 9px;
+  gap:9px;
+  grid-template-columns:minmax(0,28fr) minmax(0,44fr) minmax(0,28fr);
+  grid-template-rows:clamp(94px, 15.4vh, 119px) minmax(0,47fr) minmax(0,53fr);
+}
+.screen > header {min-width:0;padding:7px 16px; grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.brand {gap:10px;min-width:0}
+.logo {width:clamp(55px,7.5vh,80px);height:clamp(55px,7.5vh,80px)}
+h1 {font-size:clamp(25px,2.7vw,37px);line-height:1.02}
+.brand p {font-size:clamp(11px,1.35vw,16px);margin-top:4px}
+#hora{font-size:clamp(37px,5.1vw,62px)}
+#data{font-size:clamp(14px,1.55vw,20px);line-height:1.2}
+.card {padding:11px;border-radius:16px;min-width:0;min-height:0}
+.card h2 {font-size:20px;line-height:1.08;margin-bottom:6px}
+.weather {padding:12px;}
+.weather h2{font-size:20px}
+.weather .wbox{grid-template-columns:minmax(0,1fr) minmax(82px,40%);}
+.weather .temp{font-size:clamp(38px,4.5vw,55px)}
+.weather .wtext{font-size:clamp(13px,1.6vw,18px);line-height:1.17}
+.weather .art{transform:scale(.77);transform-origin:center;width:125px;height:108px;max-width:100%}
+.weather .stats{padding:6px 2px;margin-top:6px;gap:0}
+.weather .stats div{font-size:clamp(10px,1.05vw,13px)}
+.weather .stats small{font-size:9px}
+
+/* Menú: o título e a data xa non compiten na mesma fila.
+   Toda a largura restante dedícase aos pratos. */
+.menu {display:flex; flex-direction:column; padding:10px 11px; gap:5px;}
+.menuhead{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center;justify-content:flex-start;margin-bottom:2px;flex:0 0 auto}
+.menuhead h2{font-size:clamp(17px,1.6vw,22px);margin:0;line-height:1.08}
+.pill {font-size:clamp(11px,1vw,13px);padding:4px 7px;white-space:normal;line-height:1.12}
+.mcontent{display:grid;grid-template-columns:49px minmax(0,1fr);gap:8px;align-items:start;flex:1 1 auto;min-height:0}
+.badge{height:78px;border-radius:10px}
+.badge strong{font-size:30px}
+.badge span{font-size:10px}
+#menu-list{font-size:clamp(12px,1.05vw,15px);line-height:1.16;padding-left:16px;min-width:0;font-weight:750;overflow-wrap:anywhere}
+#menu-list li{margin:0 0 4px}
+.plate{display:none}
+.nut{margin-top:0;padding:5px 7px;font-size:clamp(10px,.85vw,12px);line-height:1.16;flex:0 0 auto}
+.nut[hidden]{display:none!important}
+
+/* O alto do calendario calcúlase coa altura real do título + lenda. */
+.calendar{display:flex;flex-direction:column;gap:6px;padding:11px}
+.calendar h2{font-size:clamp(21px,2.1vw,28px);line-height:1.12;margin:0;flex:0 0 auto;text-align:center}
+.cal{height:auto;flex:1 1 auto;min-height:0;border-radius:9px}
+.wd{font-size:clamp(10px,.95vw,13px)}
+.day{padding:3px 3px 1px;font-size:clamp(12px,1.07vw,16px);line-height:1.04;min-width:0;min-height:0;overflow:hidden}
+.day.today{outline-width:3px;outline-offset:-3px}
+.day .evt{margin-top:3px;padding:2px 2px;border-radius:3px;font-size:clamp(9px,.75vw,11px);line-height:1.12;font-weight:790;overflow-wrap:anywhere;white-space:normal}
+.day .festivo-label{margin-top:2px;font-size:clamp(8px,.7vw,10px);line-height:1.05}
+.legend{height:auto;min-height:16px;max-height:36px;flex:0 0 auto;font-size:clamp(9px,.7vw,11px);line-height:1.05;gap:3px 8px;margin:0}
+.legend .dot{width:9px;height:9px;margin-right:2px}
+.week-event{font-size:10px;line-height:1.1;margin:24px 2px 0;padding:3px 4px}
+.has-week-bar > span:nth-child(2){margin-top:27px}
+
+/* Dereita: máis sitio para avisos e seis eventos reais.
+   Todas as liñas teñen altura natural, sen recortes a 2 liñas. */
+.side{grid-template-rows:minmax(0,32fr) minmax(0,18fr) minmax(0,50fr);gap:9px;min-width:0;min-height:0}
+.side>.extraescolares-tv{padding:9px 11px;gap:6px}
+.extraescolares-tv h2{font-size:clamp(18px,1.65vw,22px);margin:0}
+#extraescolares-lista{gap:6px}
+#extraescolares-lista .extraescolar-tv{padding:5px;gap:4px;border-radius:9px}
+#extraescolares-lista .extraescolar-tv img{max-height:100%;object-fit:contain}
+#extraescolares-lista .extraescolar-tv strong,
+#extraescolares-lista.un-aviso .extraescolar-tv strong{font-size:clamp(16px,1.5vw,21px);line-height:1.08}
+#extraescolares-lista .extraescolar-tv span,
+#extraescolares-lista.un-aviso .extraescolar-tv span{font-size:clamp(12px,1.05vw,15px);line-height:1.1}
+.side>.notices{padding:9px 11px}
+.side>.events{padding:9px 11px}
+.notices h2,.events h2{font-size:clamp(16px,1.45vw,20px);line-height:1.1;margin:0 0 6px;padding-bottom:5px}
+.nlist,.elist{gap:4px}
+.notices .notice{grid-template-columns:25px minmax(0,1fr);gap:6px;align-items:start;padding:0 0 4px;min-height:0}
+.notices .ico{width:24px;height:24px;font-size:15px}
+.notices .notice b{font-size:clamp(10px,.8vw,12px);line-height:1.12}
+.notices .notice span{font-size:clamp(11px,.91vw,13px);line-height:1.12;overflow-wrap:anywhere}
+.erow{grid-template-columns:53px minmax(0,1fr);gap:6px;align-items:start;padding-bottom:4px;min-height:0}
+.edate{font-size:clamp(10px,.81vw,12px);line-height:1.04;padding:5px 2px;border-radius:8px}
+.erow span{font-size:clamp(12px,1.02vw,14px);line-height:1.13;overflow-wrap:anywhere}
+/* Pantallas de televisión con menos de 800 px de altura. */
+@media(max-height:800px){
+ .screen{grid-template-rows:98px minmax(0,47fr) minmax(0,53fr)}
+ .screen>.header{padding:6px 10px}
+ .weather h2{font-size:17px}
+ .weather .art{transform:scale(.66);transform-origin:top left;height:82px}
+ .weather .stats{margin-top:3px}
+ .calendar h2{font-size:22px}
+ .day .evt{font-size:9px;line-height:1.05}
+ .side{grid-template-rows:minmax(0,31fr) minmax(0,18fr) minmax(0,51fr)}
+ .side>.notices,.side>.events{padding:7px 9px}
+ .erow span{font-size:12px;line-height:1.11}
+ .elist{gap:3px}
+ .nut{padding:4px 5px}
+}
+
 </style>
 </head>
 <body>
@@ -481,7 +580,18 @@ function buildCalendar(now=schoolNow()){
       const matches=allEvents.filter(e=>e.start<=date && e.finish>=date);
       el.innerHTML=`<span>${day}</span>`;
       if(matches.some(e=>e.label==="Semana do Samaín")) el.classList.add("has-week-bar");
-      matches.filter(e=>e.label!=="Semana do Samaín").forEach(e=>{const label=document.createElement("span");label.className=`evt ${e.category}`;label.textContent=e.label;el.appendChild(label);});
+      matches.filter(e=>e.label!=="Semana do Samaín").forEach(e=>{const label=document.createElement("span");label.className=`evt ${e.category}`;const abreviadas={
+        "Excursión 1º e 2º · Museo do Humor de Fene":"Saída 1º–2º",
+        "Excursión 3º e 4º · Casa das Ciencias da Coruña":"Saída 3º–4º",
+        "Día Internacional contra a Violencia de Xénero (25N)":"25N · Igualdade",
+        "Día non lectivo de libre elección":"Non lectivo",
+        "Visitas do Apalpador e Papá Noel":"Apalpador e Papá Noel",
+        "Reserva praza IES Concepción Arenal":"Reserva IES",
+        "Ludylimpiadas e último día de clase":"Último día de clase"
+      };
+      label.textContent=abreviadas[e.label]||e.label;
+      label.title=e.label;
+      el.appendChild(label);});
     }
     root.appendChild(el);
   }
@@ -680,7 +790,7 @@ setInterval(loadWeather,30*60*1000);
   const escenas=[['🧙','A bruxa esperta!'],['👻','Pantasmas no corredor!'],['🐺','Ouvea o lobo!'],['⚡','Achégase a tormenta!'],['🦇','Voan os morcegos!'],['🚪','Ábrese a porta encantada!'],['💀','Bailan os esqueletos!'],['🧛','Chegou Drácula!'],['🎃','Ata mañá, criaturas!']];
   const parametros=new URLSearchParams(location.search);
   // ?samain=proba permite revisar a decoración fóra das datas; non activa horarios reais.
-  const proba=parametros.get('samain')==='proba' || location.protocol==='file:';
+  const proba=parametros.get('samain')==='proba';
   const formato=new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
   function agora(){const x=Object.fromEntries(formato.formatToParts(new Date()).map(p=>[p.type,p.value]));return {data:`${x.year}-${x.month}-${x.day}`,hora:`${x.hour}:${x.minute}`}}
   function activo(){const d=agora().data;return proba||(d>='2026-10-27'&&d<='2026-10-30')}
